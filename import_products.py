@@ -17,7 +17,7 @@ cur = conn.cursor()
 try:
     df = pd.read_csv(CSV_PATH, encoding="utf-8-sig")
 
-    cur.execute("SELECT name, category_id FROM categories")
+    cur.execute("SELECT name, id FROM categories")
     cat_map = dict(cur.fetchall())
 
     missing = set(df["Категория"].unique()) - set(cat_map)
