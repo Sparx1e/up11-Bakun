@@ -2,8 +2,11 @@ import pandas as pd
 import psycopg2
 
 conn = psycopg2.connect(
-    host="localhost", port=5432, database="esports_shop",
-    user="postgres", password="123"
+    host="localhost", 
+    port=5432, 
+    database="esports_shop",
+    user="postgres",
+    password="123"
 )
 cur = conn.cursor()
 
