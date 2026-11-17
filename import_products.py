@@ -4,7 +4,7 @@ import psycopg2
 CSV_PATH = r"C:\Users\funny\OneDrive\Desktop\practice\up-11-Bakun\21 World of eSports\Appendix 2 Resources\Products_import.csv"
 
 conn = psycopg2.connect(
-    host="localhost",
+host="localhost",
     port=5432,
     database="esports_shop",
     user="postgres",
