@@ -20,6 +20,15 @@ except psycopg2.Error as e:
 def calculate_price(product_id, base_price):
     conn = None
     cursor = None
+    if not isinstance(product_id, int):
+        print("Ошибка: product_id должен быть числом")
+        return None
+    if not isinstance(base_price, (int, float)):
+        print("Ошибка: base_price должен быть числом")
+        return None
+    if base_price <= 0:
+        print("Ошибка: цена должна быть > 0")
+        return None
     try:
         conn = psycopg2.connect(**DB_CONFIG)
         cursor = conn.cursor()
