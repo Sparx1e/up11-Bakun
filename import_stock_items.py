@@ -1,7 +1,7 @@
 import pandas as pd, psycopg2
 
 conn = psycopg2.connect(
-    host="localhost", 
+host="localhost", 
     port=5432,
     database="esports_shop", 
     user="postgres", 
