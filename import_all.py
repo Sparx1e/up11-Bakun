@@ -4,11 +4,11 @@ import psycopg2
 BASE = r"C:\Users\funny\OneDrive\Desktop\practice\up-11-Bakun\21 World of eSports\Appendix 2 Resources"
 
 conn = psycopg2.connect(
-host="localhost",
-port=5432,
-database="esports",
-user="postgres",
-password="123"
+    host="localhost",
+    port=5432,
+    database="esports",
+    user="postgres",
+    password="123"
 )
 cur = conn.cursor()
 
