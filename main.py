@@ -1,10 +1,13 @@
 import sys
 from PySide6.QtWidgets import QApplication, QMainWindow, QLabel, QVBoxLayout, QWidget
 from PySide6.QtGui import QIcon, QPixmap
+from database import Database
 
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
+        self.db = Database()          
+
         self.setWindowTitle("Мир киберспорта — Каталог")
         self.resize(800, 600)
         self.setWindowIcon(QIcon("resources/icon.ico"))
@@ -18,6 +21,10 @@ class MainWindow(QMainWindow):
                 color: #000000;
             }
         """)
+
+    def closeEvent(self, event):
+        self.db.close_all()
+        event.accept()
 
         central = QWidget()
         layout = QVBoxLayout()
