@@ -2,7 +2,25 @@ from database import Database
 
 
 def main():
-    db = Database()
+    print("Подключение к базе данных...")
+    try:
+        db = Database()
+        print("Успешно подключено! Получаем товары...")
+        
+        products = db.get_products()
+        
+        print(f"\nВсего получено товаров: {len(products)}")
+        
+        print("\n--- Первые 3 товара для проверки ---")
+        for product in products[:3]:
+            print(product)
+            
+        print("\n--- Последний товар для проверки ---")
+        if products:
+            print(products[-1])
+            
+    except Exception as e:
+        print(f"\n❌ Произошла ошибка: {e}")
 
     conn = db.get_connection()
     if conn is None:
